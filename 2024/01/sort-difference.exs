@@ -5,11 +5,11 @@ defmodule Sorter do
       |> Enum.reduce({[], []}, fn line, {list1, list2} ->
         # Split the line by whitespace
         [first, second] = String.split(line)
-        # Append to the respective lists
+        # Prepend to the respective lists
         {[String.to_integer(first) | list1], [String.to_integer(second) | list2]}
       end)
-    # Reverse and sort the lists
-    {Enum.sort(Enum.reverse(list1)), Enum.sort(Enum.reverse(list2))}
+    # sort the lists
+    {Enum.sort(list1), Enum.sort(list2)}
   end
 
   def absolute_difference(lists) do
