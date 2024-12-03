@@ -8,14 +8,16 @@ defmodule Sorter do
         # Prepend to the respective lists
         {[String.to_integer(first) | list1], [String.to_integer(second) | list2]}
       end)
+
     # sort the lists
     {Enum.sort(list1), Enum.sort(list2)}
   end
 
   def absolute_difference(lists) do
-      {list1, list2} = lists
-      Enum.zip(list1, list2)
-      |> Enum.map(fn {a, b} -> abs(a - b) end)
+    {list1, list2} = lists
+
+    Enum.zip(list1, list2)
+    |> Enum.map(fn {a, b} -> abs(a - b) end)
   end
 end
 
